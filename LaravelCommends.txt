@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------
+	|	Laravel Commends														|
+--------------------------------------------------------------------------------
+	make new Project :
+	composer create-project --prefer-dist laravel/laravel laravel-9-admin-setup
+	composer create-project --prefer-dist laravel/laravel Project_name "5.8.*"
+--------------------------------------------------------------------------------
+	copy Env File
+	cp .env.example .env
+--------------------------------------------------------------------------------
+	generate App Key
+	php artisan key:generate
+	-----------------------------------------------------------------------------
+	For Api
+	composer require laravel/passport
+	-----------------------------------------------------------------------------
+	run project:
+	php artisan serve
+	-----------------------------------------------------------------------------
+	Make Auth page 
+	composer require laravel/ui --dev
+	php artisan ui bootstrap --auth
+	-----------------------------------------------------------------------------
+	make Controller
+	php artisan make:controller Admin/ModuleController --resource
+	php artisan make:controller Api/AuthorizeNetPaymentController  --api
+	php artisan make:controller Api/V1/ShipengineShipmentController
+	------------------------------------------------------------------------------
+	make modal
+	php artisan make:model  Module -mcr
+	
+	------------------------------------------------------------------------------
+	make commamd
+	php artisan make:command SendLogEmailCron --command=sendlogemail:cron
+	---------------------------
+	make migration
+	php artisan make:migration referral_count_users
+	php artisan make:migration addaddressfild_admins --table=admins
+	------------------------------------------------------------------------------
+	run  migration
+	php artisan migrate
+	php artisan migrate:refresh
+	------------------------------------------------------------------------------
+	Route
+	Route::get('/home', 'HomeController@index')->name('home');
+	Route::post('/save', 'HomeController@save')->name('save');
+	Route::any('/home', 'HomeController@index')->name('home');
+	
+	Resources Routes
+	Route::resources([
+		'home' => 'HomeController',
+    ]);
+	Api Resources Routes
+	Route::apiResources([
+		'home' => 'HomeController',
+    ]);
+	-----------------------------------------------------------------------------
+	make Mail 
+	php artisan make:mail MailName
+	-----------------------------------------------------------------------------
+	Route List 
+	php artisan route:list
+	php artisan optimize:clear
+	----------------------------------------------------------------------------
+	Make Middleware
+	php artisan make:middleware Admin
+	----------------------------------------
+	Make Export/Import
+	php artisan make:export OrderExport --model=Order
+	php artisan make:import ImportName --model=ModalName
+
+	$table->bigIncrements('id');
+	$table->integer('')->default(0);
+	$table->double('amount', 8, 2)->default(0.00);
+	$table->tinyInteger('')->default(0);
+	$table->string('parent_email')->nullable();
+	$table->text('')->nullable();
+	$table->enum('', []);
+	$table->dateTime('')->nullable();
+	$table->string('about_me')->charset('utf8mb4')->collation('utf8mb4_unicode_ci')
+	$table->enum('status', ['pending','accepte''])->default('pending');
