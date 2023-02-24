@@ -24,7 +24,6 @@
                                     </label>
                                 </div>
                             </form>
-
                         </div>
                         <h5 class="fs-16 mb-1">{{ Auth::user()->name }}</h5>
                         <p class="text-muted mb-0">Super Admin</p>
@@ -76,7 +75,7 @@
                                         <span class="text-danger error-span pt-2" id="error_email"></span>
                                     </div>
                                     <!--end col-->
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-12 mt-2">
                                         <div class="hstack gap-2 justify-content-end">
                                             <button type="button" class="btn btn-primary"
                                                 onclick="updateProfile()">Updates</button>
@@ -141,12 +140,12 @@
         <!--end col-->
     </div>
 @endsection
-
 @section('scripts')
     <script type="text/javascript">
         $(document).on('change', '#profile-img-file-input', function(event) {
             callPostAjax("{{ route('admin.upload-profile-image') }}", "#profileImageForm", 1);
         });
+
         function updateProfile() {
             callPostAjax("{{ route('admin.profile') }}", "#profileForm", 1);
         }

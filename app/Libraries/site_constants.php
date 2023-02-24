@@ -6,6 +6,16 @@ define('SETTING_GROUPS', [
     'smtp-details' => 'SMTP Details',
 ]);
 
+define('SEARCH_STATUS', [
+    'Active' => 'Active',
+    'In-Active' => 'In-Active',
+]);
+
+define('FOEM_STATUS', [
+    0 => 'In-Active',
+    1 => 'Active',
+]);
+
 define('SETTING_INPUT_TYPES', [
     'text' => 'Text',
     'number' => 'Number',

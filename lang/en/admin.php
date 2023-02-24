@@ -24,6 +24,7 @@ return [
         ],
     ],
     'common' => [
+        'search_select_option_all' => 'All',
         'search_button_filter_text' => 'Filter',
         'search_clear_filter_text' => 'Clear Filters',
     ],
@@ -32,7 +33,24 @@ return [
     'modules' => [
         'create_button_text' => 'Create Module',
         'list' => [
-            '',
+        ],
+        'form' => [
+            'parent_module_label' => 'Parent Module',
+            'parent_module_placeholder' => 'Select Module',
+            'name_label' => 'Name',
+            'name_placeholder' => 'Enter Name',
+            'icon_label' => 'Icon',
+            'icon_placeholder' => 'Enter Icon',
+            'active_cases_label' => 'Active Cases',
+            'active_cases_placeholder' => 'Enter Active Cases',
+            'url_label' => 'Url',
+            'url_placeholder' => 'Enter Url',
+            'url_slug_label' => 'Url Slug',
+            'url_slug_placeholder' => 'Enter Url Slug',
+            'is_multi_level_label' => 'Is Multi Level',
+            'is_multi_level_placeholder' => 'Select Multi Level Status',
+            'status_label' => 'Status',
+            'status_placeholder' => 'Select Status',
         ],
     ],
 ];

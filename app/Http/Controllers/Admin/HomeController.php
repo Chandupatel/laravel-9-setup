@@ -13,7 +13,7 @@ class HomeController extends Controller
 {
     public function dashboard(Request $request)
     {
-        $breadcums = config('admin_breadcums.dashboard');
+        $breadcums = trans('admin_breadcums.dashboard');
         return view('admin.dashboard', compact('breadcums'));
 
     }

@@ -4,11 +4,7 @@
 @endsection
 @section('content')
     @include('layouts.admin.breadcums')
-
     <div class="row">
-        @php
-            //print_r(trans('admin.dashboard'));
-        @endphp
         <div class="col-lg-12">
             <div class="card" id="invoiceList">
                 <div class="card-header border-0">
@@ -29,16 +25,16 @@
                     <form id="searchForm">
                         <div class="row g-3">
                             <div class="col-xxl-3 col-sm-3">
-                                <input type="text" class="form-control search bg-light border-light" placeholder="name "
-                                    name="name">
+                                {!! Form::text('name', '', [
+                                    'class' => 'form-control search bg-light border-light',
+                                    'placeholder' => 'Name',
+                                ]) !!}
                             </div>
                             <!--end col-->
                             <div class="col-xxl-3 col-sm-3">
-                                <select class="form-control bg-light border-light" name="status">
-                                    <option value="">All Status</option>
-                                    <option value="Active">Active</option>
-                                    <option value="In-Active">In-Active</option>
-                                </select>
+                                {!! Form::select('status', [null => trans('admin.common.search_select_option_all')] + SEARCH_STATUS, '', [
+                                    'class' => 'form-control bg-light border-light',
+                                ]) !!}
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -58,27 +54,7 @@
                         <!--end row-->
                     </form>
                 </div>
-                <div class="card-body">
-                    <div class="table-card">
-                        <table class="table align-middle table-nowrap yajra-datatable">
-                            <thead class="text-muted datatable_head">
-                                <tr>
-                                    <th scope="col" style="width: 50px;">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="checkAll" value="option">
-                                        </div>
-                                    </th>
-                                    <th class="text-uppercase">#</th>
-                                    <th class="text-uppercase">name</th>
-                                    <th class="text-uppercase">status</th>
-                                    <th class="text-uppercase">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody class="list form-check-all">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                @include('layouts.datatable')
             </div>
 
         </div>

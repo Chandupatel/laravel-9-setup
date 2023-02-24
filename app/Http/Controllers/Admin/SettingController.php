@@ -53,8 +53,8 @@ class SettingController extends Controller
                 ->rawColumns(['action_checkbox', 'action'])
                 ->make(true);
         } else {
-            $breadcums = config('admin_breadcums.settings.index');
-            $dataTableConfig = config('admin_datatables_constants.settings');
+            $breadcums = trans('admin_breadcums.settings.index');
+            $dataTableConfig = trans('admin_datatables_constants.settings');
             $dataTableConfig['url'] = route('admin.settings.index');
             return view('admin.settings.index', compact('breadcums', 'dataTableConfig'));
         }
@@ -78,7 +78,7 @@ class SettingController extends Controller
     public function create(Request $request)
     {
 
-        $breadcums = config('admin_breadcums.settings.create');
+        $breadcums = trans('admin_breadcums.settings.create');
         $groups = SETTING_GROUPS;
         $input_types = SETTING_INPUT_TYPES;
         return view('admin.settings.create', compact('breadcums', 'groups', 'input_types'));
@@ -138,7 +138,7 @@ class SettingController extends Controller
 
     public function edit($id)
     {
-        $breadcums = config('admin_breadcums.settings.edit');
+        $breadcums = trans('admin_breadcums.settings.edit');
         $obj = Setting::find($id);
         if ($obj) {
             $groups = SETTING_GROUPS;

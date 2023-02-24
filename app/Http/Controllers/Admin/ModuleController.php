@@ -43,8 +43,9 @@ class ModuleController extends Controller
                 ->rawColumns(['action_checkbox', 'action'])
                 ->make(true);
         } else {
-            $breadcums = config('admin_breadcums.modules.index');
-            $dataTableConfig = config('admin_datatables_constants.modules');
+
+            $breadcums = trans('admin_breadcums.modules.index');
+            $dataTableConfig = trans('admin_datatables_constants.modules');
             $dataTableConfig['url'] = route('admin.modules.index');
             return view('admin.modules.index', compact('breadcums', 'dataTableConfig'));
         }
@@ -52,8 +53,8 @@ class ModuleController extends Controller
 
     public function create()
     {
-        $breadcums = config('admin_breadcums.modules.create');
-        $modules = Module::where('parent_id', 0)->get();
+        $breadcums = trans('admin_breadcums.modules.create');
+        $modules = Module::where('parent_id', 0)->orderBy('name', 'asc')->pluck('name', 'id')->toArray();
         return view('admin.modules.create', compact('breadcums', 'modules'));
     }
 
@@ -116,10 +117,10 @@ class ModuleController extends Controller
 
     public function edit($id)
     {
-        $breadcums = config('admin_breadcums.modules.edit');
+        $breadcums = trans('admin_breadcums.modules.edit');
         $obj = Module::find($id);
         if ($obj) {
-            $modules = Module::where('parent_id', 0)->get();
+            $modules = Module::where('parent_id', 0)->orderBy('name', 'asc')->pluck('name', 'id')->toArray();
             return view('admin.modules.edit', compact('breadcums', 'obj', 'modules'));
         } else {
             return redirect()->back()->with('error', 'Oops..something has went wrong. Please try again.');

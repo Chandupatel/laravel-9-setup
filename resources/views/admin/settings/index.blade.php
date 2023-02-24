@@ -66,34 +66,7 @@
                         <!--end row-->
                     </form>
                 </div>
-                <div class="card-body">
-                    <div class="table-card">
-                        <table class="table align-middle table-nowrap yajra-datatable">
-                            <thead class="text-muted datatable_head">
-                                <tr>
-                                    <th scope="col" style="width: 50px;">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="checkAll" value="option">
-                                        </div>
-                                    </th>
-                                    <th class="text-uppercase">#</th>
-                                    <th class="text-uppercase">
-                                        group
-                                    </th>
-                                    <th class="text-uppercase">label</th>
-                                    <th class="text-uppercase">value</th>
-                                    <th class="text-uppercase">input type</th>
-                                    <th class="text-uppercase">Status</th>
-                                    <th class="text-uppercase">Date</th>
-                                    <th class="text-uppercase">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody class="list form-check-all">
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                @include('layouts.datatable')
             </div>
 
         </div>
