@@ -147,7 +147,7 @@
         });
 
         function updateProfile() {
-            callPostAjax("{{ route('admin.profile') }}", "#profileForm", 1);
+            callPostAjax("{{ route('admin.profile') }}", "#profileForm", 0);
         }
 
         function changePassword() {

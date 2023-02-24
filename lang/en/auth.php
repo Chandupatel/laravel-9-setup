@@ -28,7 +28,6 @@ return [
                 'password_placeholder' => 'Enter Password',
                 'submit_button_text' => 'Sign In',
             ],
-            ''
         ],
         'forgot_password' => [
             'page_title' => 'Forgot Password?',
