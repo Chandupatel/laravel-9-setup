@@ -33,7 +33,7 @@ function callPostAjax(url, form_id, reload_page, succrss_redirect = 0, succrss_r
         $.ajax({
             url: url,
             headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             method: 'post',
             data: new FormData($(form_id)[0]),
@@ -91,7 +91,7 @@ $(document).on('click', '.row-delete-button', function (event) {
                 type: "delete",
                 cache: false,
                 data: {
-                    _token: '{{ csrf_token() }}'
+                    _token: $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function (data) {
                     if (data.status == true) {

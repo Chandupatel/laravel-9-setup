@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Feb 24, 2023 at 12:26 PM
+-- Generation Time: Feb 28, 2023 at 05:53 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -187,11 +187,12 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `group`, `label`, `key`, `value`, `input_type`, `input_options`, `status`, `display_order`, `created_at`, `updated_at`) VALUES
-(3, 'company-details', 'Company', 'nnnn', 'SSSSSSS', 'text', NULL, 1, 0, '2023-01-21 05:20:37', '2023-01-21 05:47:48'),
-(4, 'company-details', 'asdasd', 'rrr', NULL, 'select', 'kkkkkkk', 1, 0, '2023-01-21 09:30:18', '2023-01-21 09:34:02'),
-(5, 'social-media', 'dsfsdfsdfsf', 'ttt', '888888', 'text', 'ddeeee', 1, 0, '2023-01-21 09:37:37', '2023-01-21 09:42:21'),
-(6, 'company-details', 'asdasd', 'AAAAA', 'sasdas', 'text', NULL, 1, 0, '2023-01-22 05:51:35', '2023-01-22 05:51:35'),
-(7, 'social-media', '55888', 'LOPP', 'Company', 'text', NULL, 1, 0, '2023-01-22 05:59:26', '2023-01-22 05:59:26');
+(1, 'company-details', 'Company Name', 'COMPANY_NAME', 'Company Name', 'text', NULL, 1, 0, '2023-02-24 12:51:58', '2023-02-24 12:51:58'),
+(2, 'company-details', 'Company Email', 'COMPANY_EMAIL', 'mail@gmail.com', 'email', NULL, 1, 0, '2023-02-24 12:53:17', '2023-02-24 12:53:17'),
+(3, 'company-details', 'Contact Number', 'CONTECT_NUMBER', '8855226699', 'text', NULL, 1, 0, '2023-02-24 12:54:10', '2023-02-24 12:54:10'),
+(4, 'company-details', 'Company Address', 'COMPANY_ADDRESS', 'Address', 'textarea', NULL, 1, 0, '2023-02-24 12:54:55', '2023-02-24 12:54:55'),
+(5, 'company-details', 'Company Logo', 'COMPANY_LOGO', 'Logo', 'file', NULL, 1, 0, '2023-02-24 12:56:01', '2023-02-24 12:56:22'),
+(6, 'company-details', 'Company Favicon', 'COMPANY_FAVICON', 'Favicon', 'file', NULL, 1, 0, '2023-02-24 12:57:24', '2023-02-24 12:57:24');
 
 -- --------------------------------------------------------
 
@@ -316,7 +317,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`

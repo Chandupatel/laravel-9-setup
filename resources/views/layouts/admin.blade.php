@@ -91,8 +91,6 @@
 
     <!-- JAVASCRIPT -->
     <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
-
-
     <script type="text/javascript" src="{{ asset('admin/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('admin/libs/simplebar/simplebar.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('admin/libs/node-waves/waves.min.js') }}"></script>
@@ -106,7 +104,6 @@
     <script type="text/javascript" src="{{ asset('admin/js/app.js') }}"></script>
     <script type="text/javascript" src="{{ asset('admin/js/admin.js') }}"></script>
     @include('layouts/notification')
-
     @yield('scripts')
 </body>
 </html>

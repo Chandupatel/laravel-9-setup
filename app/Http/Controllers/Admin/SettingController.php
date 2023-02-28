@@ -67,7 +67,7 @@ class SettingController extends Controller
         $settings = Setting::where('group', $group)->get();
         if ($settings && count($settings) > 0) {
             $group_name = ucwords(str_replace('-', ' ', $group));
-            $breadcums = config('admin_breadcums.settings.group');
+            $breadcums = trans('admin_breadcums.settings.group');
             $breadcums['breadcums'][2]['name'] = $group_name;
             return view('admin.settings.group-form', compact('breadcums', 'settings', 'group_name'));
         } else {

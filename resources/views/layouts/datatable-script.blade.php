@@ -4,6 +4,7 @@
 <script type="text/javascript">
     var dataTableConfig = @json($dataTableConfig);
     var dataTable = $('.yajra-datatable').DataTable({
+        ordering: false,
         processing: false,
         serverSide: true,
         searching: false,
